@@ -4,5 +4,18 @@
   "description": "eslint plugins for channel.io web",
   "author": "Channel Corp.",
   "main": "index.js",
-  "license": "UNLICENSED"
+  "bugs": {
+    "url": "https://github.com/channel-io/eslint-plugin/issues"
+  },
+  "homepage": "https://github.com/channel-io/eslint-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/channel-io/eslint-plugin.git"
+  },
+  "keywords": [
+    "react",
+    "eslint",
+    "channelio"
+  ],
+  "license": "MIT"
 }
