@@ -20,8 +20,8 @@ module.exports = {
           return
         }
 
-        const { callee, arguments } = node
-        if (callee.name === classNameImportName && arguments.length === 1 && arguments[0].type !== 'ObjectExpression') {
+        const { callee, arguments: args } = node
+        if (callee.name === classNameImportName && args.length === 1 && args[0].type !== 'ObjectExpression') {
           context.report({
             node,
             message: 'Do not call classnames with only one argument.',

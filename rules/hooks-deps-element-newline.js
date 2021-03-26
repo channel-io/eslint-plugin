@@ -18,11 +18,11 @@ module.exports = {
   create(context) {
     return {
       CallExpression(node) {
-        const { callee, arguments } = node
-        if (!reactHookNames.includes(callee.name) || arguments.length <= 1) {
+        const { callee, arguments: args } = node
+        if (!reactHookNames.includes(callee.name) || args.length <= 1) {
           return
         }
-        const deps = arguments[arguments.length - 1]
+        const deps = args[args.length - 1]
         if (deps.type === 'ArrayExpression') {
           if (deps.elements.length <= 1 && deps.loc.start.line !== deps.loc.end.line) {
             context.report({
