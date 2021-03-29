@@ -20,6 +20,7 @@
 > Documents are written by Korean only.
 - [no-classnames-with-one-argument](./docs/no-classnames-with-one-argument.md)
 - [hooks-deps-element-newline](./docs/hooks-deps-element-newline.md)
+- [pascal-case-interface-name](./docs/pascal-case-interface-name.md)
 
 ## See also
 - https://github.com/channel-io/eslint-config
