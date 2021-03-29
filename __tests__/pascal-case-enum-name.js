@@ -22,6 +22,26 @@ ruleTester.run('pascal-case-enum-name', rule, {
         }
       `,
     },
+    {
+      code: `
+        enum FooBar {
+          Error,
+          NORMAL,
+          SUCCESS_NORMAL_1,
+        }
+      `,
+      options: [false, false],
+    },
+    {
+      code: `
+        enum FooBar {
+          Error,
+          NORMAL,
+          SUCCESS_NORMAL_1,
+        }
+      `,
+      options: [true, false],
+    },
   ],
   invalid: [
     {
@@ -62,6 +82,26 @@ ruleTester.run('pascal-case-enum-name', rule, {
         { message: 'Enum member\'s first charactor must be upper case.' },
         { message: 'Enum member\'s first charactor must be upper case.' },
         { message: 'Enum member\'s first charactor must be upper case.' },
+      ],
+    },
+    {
+      code: `
+        enum fooBar {
+          error,
+          normal,
+          success,
+        }
+      `,
+      output: `
+        enum FooBar {
+          error,
+          normal,
+          success,
+        }
+      `,
+      options: [false, false],
+      errors: [
+        { message: 'Enum\'s first charactor must be upper case.' },
       ],
     },
     {
