@@ -4,6 +4,9 @@
   "description": "eslint plugins for channel.io web",
   "author": "Channel Corp.",
   "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "bugs": {
     "url": "https://github.com/channel-io/eslint-plugin/issues"
   },
@@ -17,5 +20,12 @@
     "eslint",
     "channelio"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "jest": "^26.6.3"
+  },
+  "jest": {
+    "testPathIgnorePatterns": ["__tests__/ruleTester.js"]
+  }
 }
