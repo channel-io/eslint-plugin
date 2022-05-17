@@ -4,6 +4,7 @@ const noTranslateWithTemplateLiteral = require('./rules/no-translate-with-templa
 const pascalCaseEnumName = require('./rules/pascal-case-enum-name')
 const pascalCaseInterfaceName = require('./rules/pascal-case-interface-name')
 const pascalCaseTypeName = require('./rules/pascal-case-type-name')
+const preventDestructuredArgumentCallbackInIntersectionObserver = require('./rules/prevent-destructured-argument-callback-in-intersection-observer')
 
 module.exports = {
   rules: {
@@ -13,5 +14,6 @@ module.exports = {
     'pascal-case-enum-name': pascalCaseEnumName,
     'pascal-case-interface-name': pascalCaseInterfaceName,
     'pascal-case-type-name': pascalCaseTypeName,
+    'prevent-destructured-argument-callback-in-intersection-observer': preventDestructuredArgumentCallbackInIntersectionObserver,
   },
 }

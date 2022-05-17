@@ -20,13 +20,14 @@ module.exports = {
     },
   },
   create(context) {
+    const sourceCode = context.getSourceCode()
     const translateFuncNames = context.options[0]?.translateFuncNames || ['translate']
     return {
       CallExpression(node) {
-        const { callee, arguments: args } = node
+        const { callee } = node
         if (
           translateFuncNames.includes(callee.name) &&
-          args[0].type === 'TemplateLiteral'
+          sourceCode.getTokens(node).some(token => token.type === 'Template')
         ) {
           context.report({
             node,
