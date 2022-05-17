@@ -7,6 +7,12 @@ ruleTester.run('no-translate-with-template-literal', rule, {
       code: `translate('my.foo.key')`,
     },
     {
+      code: `translate('my.foo.key' as string)`,
+    },
+    {
+      code: `translate('my.foo.key' as const)`,
+    },
+    {
       code: `
         const TRANSLATE_KEY = 'my.foo.key'
         
@@ -34,6 +40,14 @@ ruleTester.run('no-translate-with-template-literal', rule, {
     },
     {
       code: 'translate(`my.foo.${second}.${third}.fourth`)',
+      errors: [{ message: 'Do not call translation method with template literal.' }],
+    },
+    {
+      code: 'translate(`my.foo.${second}.${third}.fourth` as string)',
+      errors: [{ message: 'Do not call translation method with template literal.' }],
+    },
+    {
+      code: 'translate(`my.foo.${second}.${third}.fourth` as const)',
       errors: [{ message: 'Do not call translation method with template literal.' }],
     },
     {
